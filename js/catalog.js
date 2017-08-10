@@ -1,10 +1,4 @@
 $(document).ready(function() {
-
-});
-
-
-
-$(document).ready(function() {
     // Handler for .ready() called.
     $("#DynamicHTML").append(buildMyProduct(myCatalogData));
 });
