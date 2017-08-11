@@ -82,6 +82,10 @@ body {
     padding: 0px;
 }
 
+.panel-heading {
+    padding-bottom: 70px;
+}
+
 h4,
 address,
 p {

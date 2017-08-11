@@ -20,21 +20,21 @@ function FindMyProduct(id) {
 
 
 //Dynamic build your collection
-function buildMyProduct(myProduct) {
-    var html = "<div class='row'><div class='col-xs-12'>";
-    html += "<h1 class='heading1'>" + myProduct.title + "</h1><br></div></div>";
-    html += "<div class='row'><div class='col-xs-12 col-md-3 thumb-main'><div class='main-prod-img'>";
-    html += "<img class='product-image' src='" + myProduct.imageurl + "' alt=''></div>";
-    html += "<div class='thumb-section'><div class='thumb-img'><img class='thumb-image' src='";
-    html += myProduct.imageurl + "' alt=''></div><div class='thumb-img'><img class='thumb-image' src='";
-    html += myProduct.imageurl + "' alt=''></div><div class='thumb-img'><img class='thumb-image' src='";
-    html += myProduct.imageurl + "' alt=''></div></div><div class='product-text'><p class='p-model'>";
-    html += "Model: " + myProduct.model + "</p><p class='p-price'>Price: $" + myProduct.price;
-    html += "</p></div></div><div class='col-xs-12 col-md-6'><div class='product-description'>";
-    html += "<p style='text-align: justify;'>" + myProduct.description + "</p></div></div>";
+// function buildMyProduct(myProduct) {
+//     var html = "<div class='row'><div class='col-md-offset-2 col-md-3'>";
+//     html += "<div class='product-view'><h4>" + myProduct.title + "</h4>";
+//     html += "<img src='" + myProduct.imageurl + "' class='' alt='' style=''>";
+//     html += "<div class='product-image'>";
+//     html += myProduct.imageurl + "' class='' alt='' style=''>";
+//     html += myProduct.imageurl + "' class='' alt='' style=''>'";
+//     html += myProduct.imageurl + "' class='' alt='' style=''></div>";
+//     html += "<div class='product-model'><h4>" + myProduct.model + "</h4></div>";
+//     html += "<div class='product-price'><h4>" + myProduct.price + "</h4></div>";
+//     html += "<div class='product-description'>";
+//     html += "<p>" + myProduct.description + "</p></div></div></div>";
 
-    $("#prueba2").append(html);
-}
+//     $("#prueba2").append(html);
+// }
 
 function getJsonFromUrl() {
     var query = location.search.substr(1);
