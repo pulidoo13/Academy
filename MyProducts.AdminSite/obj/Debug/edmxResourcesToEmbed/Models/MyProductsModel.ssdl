@@ -1,0 +1,78 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="MyCompanyModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="Category">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Category" Type="nvarchar" MaxLength="50" />
+    <Property Name="Description" Type="nvarchar(max)" />
+    <Property Name="Active" Type="bit" />
+    <Property Name="CreateDateTime" Type="datetime" />
+    <Property Name="UpdateDateTime" Type="datetime" />
+  </EntityType>
+  <EntityType Name="Product">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Name" Type="nvarchar" MaxLength="50" />
+    <Property Name="Description" Type="nvarchar(max)" />
+    <Property Name="Model" Type="nvarchar(max)" />
+    <Property Name="Price" Type="int" />
+    <Property Name="Keywords" Type="nvarchar(max)" />
+    <Property Name="CategoryID" Type="int" />
+    <Property Name="Active" Type="bit" />
+    <Property Name="CreateDateTime" Type="datetime" />
+    <Property Name="UpdateDateTime" Type="datetime" />
+  </EntityType>
+  <EntityType Name="ProductImage">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Description" Type="nvarchar(max)" />
+    <Property Name="ImageURL" Type="nvarchar(max)" />
+    <Property Name="Active" Type="bit" />
+    <Property Name="ProductID" Type="int" />
+    <Property Name="CreateDateTime" Type="datetime" />
+    <Property Name="UpdateDateTime" Type="datetime" />
+  </EntityType>
+  <Association Name="FK__Product__Categor__300424B4">
+    <End Role="Category" Type="Self.Category" Multiplicity="0..1" />
+    <End Role="Product" Type="Self.Product" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Category">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="Product">
+        <PropertyRef Name="CategoryID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__ProductIm__Produ__32E0915F">
+    <End Role="Product" Type="Self.Product" Multiplicity="0..1" />
+    <End Role="ProductImage" Type="Self.ProductImage" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Product">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="ProductImage">
+        <PropertyRef Name="ProductID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="MyCompanyModelStoreContainer">
+    <EntitySet Name="Category" EntityType="Self.Category" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Product" EntityType="Self.Product" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="ProductImage" EntityType="Self.ProductImage" Schema="dbo" store:Type="Tables" />
+    <AssociationSet Name="FK__Product__Categor__300424B4" Association="Self.FK__Product__Categor__300424B4">
+      <End Role="Category" EntitySet="Category" />
+      <End Role="Product" EntitySet="Product" />
+    </AssociationSet>
+    <AssociationSet Name="FK__ProductIm__Produ__32E0915F" Association="Self.FK__ProductIm__Produ__32E0915F">
+      <End Role="Product" EntitySet="Product" />
+      <End Role="ProductImage" EntitySet="ProductImage" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>
