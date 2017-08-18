@@ -13,13 +13,15 @@ namespace MyProducts.AdminSite.Controllers
 {
     public class ProductsController : Controller
     {
-        private MyCompanyEntities db = new MyCompanyEntities();
+        private Entities db = new Entities();
 
         // GET: Products
         public ActionResult Index()
         {
             var products = db.Products.Include(p => p.Category);
             return View(products.ToList());
+            //var products = db.Products.ToList(); //.Include(x => x.Category);
+            //return null;
         }
 
 
@@ -59,7 +61,7 @@ namespace MyProducts.AdminSite.Controllers
             {
 
                 product.CreateDateTime = DateTime.Now;
-                product.UpdateDateTime = DateTime.Now;
+                product.UpdatDateTime = DateTime.Now;
                 db.Products.Add(product);
                 db.SaveChanges();
                 return RedirectToAction("Index");
@@ -97,7 +99,7 @@ namespace MyProducts.AdminSite.Controllers
             if (ModelState.IsValid)
             {
                  
-                product.UpdateDateTime = DateTime.Now;
+                product.UpdatDateTime = DateTime.Now;
 
                 db.Entry(product).State = EntityState.Modified;
                 db.SaveChanges();

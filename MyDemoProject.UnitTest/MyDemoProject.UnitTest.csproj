@@ -98,10 +98,6 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\MyDemoProject.API\MyDemoProject.API.csproj">
-      <Project>{7dce8d22-265e-457f-b3ce-3b09d915c42b}</Project>
-      <Name>MyDemoProject.API</Name>
-    </ProjectReference>
     <ProjectReference Include="..\MyDemoProject.PublicWebSite\MyDemoProject.PublicWebSite.csproj">
       <Project>{4ff18442-6436-4c63-b9e0-8db8bb1446ef}</Project>
       <Name>MyDemoProject.PublicWebSite</Name>

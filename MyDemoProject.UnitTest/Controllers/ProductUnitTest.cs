@@ -65,15 +65,15 @@ namespace MyDemoProject.UnitTest
             Assert.IsNotNull(result);
         }
 
-        [TestMethod]
-        public void EditPost()
-        {
-            ProductsController controller = new ProductsController();
-            var product = new Product();
-            product.ID = 1;
+        //[TestMethod]
+        //public void EditPost()
+        //{
+        //    ProductsController controller = new ProductsController();
+        //    var product = new Product();
+        //    product.ID = 1;
 
-            ViewResult result = controller.Edit(1) as ViewResult;
-        }
+        //    ViewResult result = controller.Edit(1) as ViewResult;
+        //}
                
     }
 }

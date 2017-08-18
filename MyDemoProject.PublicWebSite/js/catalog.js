@@ -1,21 +1,7 @@
 $(document).ready(function() {
-    // Handler for .ready() called.
-    $("#DynamicHTML").append(buildMyProduct(jsonCatalog));
     GetAllProducts();
 });
 
-function buildMyProduct(obj) {
-    var html = " ";
-    $.each(obj, function (element, object) {        
-        html += " <div class='row'><div class='col-md-4'>";
-        html += " <div class='catalog-item'><div class='thumbnail'>";
-        html += "<h4><a href='details.html'>" + object.title + "</a></h4>";
-        html += "<img src='" + object.imgUrl + "' class='img-rounded' alt='cellphone' style='width:50%'>";
-        html += "<div class='caption'><p>" + object.description + "</p></div>";
-        html += "</div></div></div></div>";
-    });
-    return html;        
-}
 
 
 function GetAllProducts() {
@@ -25,7 +11,16 @@ function GetAllProducts() {
         contentType: "application/json; charset=utf-8",
         dataType: "json",
         success: function (data) {
-
+            var html = "";
+            $.each(data, function (element, object) {
+                html += " <div class='row'><div class='col-md-4'>";
+                html += " <div class='catalog-item'><div class='thumbnail'>";
+                html += "<h4><a href='details.html'>" + object.Name + "</a></h4>";
+                html += "<img src='" + object.imgUrl + "' class='img-rounded' alt='cellphone' style='width:50%'>";
+                html += "<div class='caption'><p>" + object.Description + "</p></div>";
+                html += "</div></div></div></div>";
+            });
+            $("#DynamicHTML").append(html);
         },
         error: function (a, b, c) {
 

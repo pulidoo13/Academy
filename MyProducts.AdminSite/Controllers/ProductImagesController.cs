@@ -12,7 +12,7 @@ namespace MyProducts.AdminSite.Controllers
 {
     public class ProductImagesController : Controller
     {
-        private MyCompanyEntities db = new MyCompanyEntities();
+        private Entities db = new Entities();
 
         // GET: ProductImages
         public ActionResult Index()

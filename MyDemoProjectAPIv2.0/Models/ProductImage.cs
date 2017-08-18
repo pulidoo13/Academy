@@ -15,12 +15,12 @@ namespace MyDemoProjectAPIv2._0.Models
     public partial class ProductImage
     {
         public int ID { get; set; }
-        public string Description { get; set; }
+        public string iDescription { get; set; }
         public string ImageURL { get; set; }
         public Nullable<bool> Active { get; set; }
-        public Nullable<int> ProductID { get; set; }
         public Nullable<System.DateTime> CreateDateTime { get; set; }
-        public Nullable<System.DateTime> UpdateDateTime { get; set; }
+        public Nullable<System.DateTime> UpdatDateTime { get; set; }
+        public Nullable<int> ProductID { get; set; }
     
         public virtual Product Product { get; set; }
     }

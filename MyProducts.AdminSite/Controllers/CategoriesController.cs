@@ -12,7 +12,7 @@ namespace MyProducts.AdminSite.Controllers
 {
     public class CategoriesController : Controller
     {
-        private MyCompanyEntities db = new MyCompanyEntities();
+        private Entities db = new Entities();
 
         // GET: Categories
         public ActionResult Index()

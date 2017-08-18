@@ -166,28 +166,28 @@
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Models\Category.cs">
-      <DependentUpon>MyProductsModel.tt</DependentUpon>
+      <DependentUpon>MarketModel.tt</DependentUpon>
     </Compile>
-    <Compile Include="Models\MyProductsModel.Context.cs">
+    <Compile Include="Models\MarketModel.Context.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>MyProductsModel.Context.tt</DependentUpon>
+      <DependentUpon>MarketModel.Context.tt</DependentUpon>
     </Compile>
-    <Compile Include="Models\MyProductsModel.cs">
+    <Compile Include="Models\MarketModel.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>MyProductsModel.tt</DependentUpon>
+      <DependentUpon>MarketModel.tt</DependentUpon>
     </Compile>
-    <Compile Include="Models\MyProductsModel.Designer.cs">
+    <Compile Include="Models\MarketModel.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>MyProductsModel.edmx</DependentUpon>
+      <DependentUpon>MarketModel.edmx</DependentUpon>
     </Compile>
     <Compile Include="Models\Product.cs">
-      <DependentUpon>MyProductsModel.tt</DependentUpon>
+      <DependentUpon>MarketModel.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\ProductImage.cs">
-      <DependentUpon>MyProductsModel.tt</DependentUpon>
+      <DependentUpon>MarketModel.tt</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -198,15 +198,15 @@
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
-    <Content Include="Models\MyProductsModel.Context.tt">
+    <Content Include="Models\MarketModel.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>MyProductsModel.edmx</DependentUpon>
-      <LastGenOutput>MyProductsModel.Context.cs</LastGenOutput>
+      <DependentUpon>MarketModel.edmx</DependentUpon>
+      <LastGenOutput>MarketModel.Context.cs</LastGenOutput>
     </Content>
-    <Content Include="Models\MyProductsModel.tt">
+    <Content Include="Models\MarketModel.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>MyProductsModel.edmx</DependentUpon>
-      <LastGenOutput>MyProductsModel.cs</LastGenOutput>
+      <DependentUpon>MarketModel.edmx</DependentUpon>
+      <LastGenOutput>MarketModel.cs</LastGenOutput>
     </Content>
     <Content Include="Scripts\ai.0.22.9-build00167.js" />
     <Content Include="Scripts\ai.0.22.9-build00167.min.js" />
@@ -215,12 +215,12 @@
     <Content Include="ApplicationInsights.config">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <EntityDeploy Include="Models\MyProductsModel.edmx">
+    <EntityDeploy Include="Models\MarketModel.edmx">
       <Generator>EntityModelCodeGenerator</Generator>
-      <LastGenOutput>MyProductsModel.Designer.cs</LastGenOutput>
+      <LastGenOutput>MarketModel.Designer.cs</LastGenOutput>
     </EntityDeploy>
-    <Content Include="Models\MyProductsModel.edmx.diagram">
-      <DependentUpon>MyProductsModel.edmx</DependentUpon>
+    <Content Include="Models\MarketModel.edmx.diagram">
+      <DependentUpon>MarketModel.edmx</DependentUpon>
     </Content>
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <None Include="Scripts\jquery-3.1.1.intellisense.js" />

@@ -172,20 +172,27 @@
     <Content Include="Content\Site.css" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
-    <Content Include="Models\AllProductsModel.Context.tt">
+    <Content Include="Models\MarketModel.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>AllProductsModel.edmx</DependentUpon>
-      <LastGenOutput>AllProductsModel.Context.cs</LastGenOutput>
+      <DependentUpon>MarketModel.edmx</DependentUpon>
+      <LastGenOutput>MarketModel.Context.cs</LastGenOutput>
     </Content>
-    <Content Include="Models\AllProductsModel.tt">
+    <Content Include="Models\MarketModel.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>AllProductsModel.edmx</DependentUpon>
-      <LastGenOutput>AllProductsModel.cs</LastGenOutput>
+      <DependentUpon>MarketModel.edmx</DependentUpon>
+      <LastGenOutput>MarketModel.cs</LastGenOutput>
     </Content>
     <Content Include="scripts\ai.0.22.9-build00167.js" />
     <Content Include="scripts\ai.0.22.9-build00167.min.js" />
     <Content Include="scripts\bootstrap.js" />
     <Content Include="scripts\bootstrap.min.js" />
+    <EntityDeploy Include="Models\MarketModel.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>MarketModel.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <Content Include="Models\MarketModel.edmx.diagram">
+      <DependentUpon>MarketModel.edmx</DependentUpon>
+    </Content>
     <None Include="scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="scripts\jquery-1.10.2.js" />
     <Content Include="scripts\jquery-1.10.2.min.js" />
@@ -203,32 +210,33 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
     <Compile Include="Controllers\ProductsController.cs" />
+    <Compile Include="Controllers\TestController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Models\AllProductsModel.Context.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>AllProductsModel.Context.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\AllProductsModel.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>AllProductsModel.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\AllProductsModel.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>AllProductsModel.edmx</DependentUpon>
-    </Compile>
     <Compile Include="Models\Category.cs">
-      <DependentUpon>AllProductsModel.tt</DependentUpon>
+      <DependentUpon>MarketModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\MarketModel.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>MarketModel.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\MarketModel.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>MarketModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\MarketModel.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>MarketModel.edmx</DependentUpon>
     </Compile>
     <Compile Include="Models\Product.cs">
-      <DependentUpon>AllProductsModel.tt</DependentUpon>
+      <DependentUpon>MarketModel.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\ProductImage.cs">
-      <DependentUpon>AllProductsModel.tt</DependentUpon>
+      <DependentUpon>MarketModel.tt</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -236,13 +244,6 @@
     <Content Include="packages.config" />
     <Content Include="ApplicationInsights.config">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <EntityDeploy Include="Models\AllProductsModel.edmx">
-      <Generator>EntityModelCodeGenerator</Generator>
-      <LastGenOutput>AllProductsModel.Designer.cs</LastGenOutput>
-    </EntityDeploy>
-    <Content Include="Models\AllProductsModel.edmx.diagram">
-      <DependentUpon>AllProductsModel.edmx</DependentUpon>
     </Content>
     <Content Include="Views\Shared\Error.cshtml" />
     <Content Include="Views\_ViewStart.cshtml" />
@@ -262,6 +263,7 @@
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="Views\Products\" />
+    <Folder Include="Views\Test\" />
   </ItemGroup>
   <ItemGroup>
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />

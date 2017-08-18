@@ -1,5 +1,6 @@
 $(document).ready(function() {
-    loadProduct();
+    //loadProduct();
+    buildMyProduct();
 
 });
 
@@ -20,21 +21,21 @@ function FindMyProduct(id) {
 
 
 //Dynamic build your collection
-function buildMyProduct(myCollection) {
-     var html = "<div id='prueba2'><div class='row'><div class='col-md-offset-2 col-md-3'>";
-     html += "<div class='product-view'><h4>" + myCollection.title + "</h4>";
-     html += "<img src='" + myCollection.imgUrl + "' class='img-rounded' alt='cellphone' style='width:80%'>";
-     html += "<div class='product-image'>";
-     html += "<img src='" + myCollection.imgUrl + "' class='img-rounded' alt='cellphone' style='width:20%'>";
-     html += "<img src='" + myCollection.imgUrl + "' class='img-rounded' alt='cellphone' style='width:20%'>'";
-     html += "<img src='" + myCollection.imgUrl + "' class='img-rounded' alt='cellphone' style='width:20%'></div>";
-     html += "<div class='product-model'><h4>" + myCollection.model + "</h4></div>";
-     html += "<div class='product-price'><h4>" + myCollection.price + "</h4></div>";
-     html += "<div class='product-description'>";
-     html += "<p>" + myCollection.description + "</p></div> </div> </div>";
+//function buildMyProduct(myCollection) {
+//     //var html = "<div id='prueba2'><div class='row'><div class='col-md-offset-2 col-md-3'>";
+//     //html += "<div class='product-view'><h4>" + myCollection.title + "</h4>";
+//     //html += "<img src='" + myCollection.imgUrl + "' class='img-rounded' alt='cellphone' style='width:80%'>";
+//     //html += "<div class='product-image'>";
+//     //html += "<img src='" + myCollection.imgUrl + "' class='img-rounded' alt='cellphone' style='width:20%'>";
+//     //html += "<img src='" + myCollection.imgUrl + "' class='img-rounded' alt='cellphone' style='width:20%'>'";
+//     //html += "<img src='" + myCollection.imgUrl + "' class='img-rounded' alt='cellphone' style='width:20%'></div>";
+//     //html += "<div class='product-model'><h4>" + myCollection.model + "</h4></div>";
+//     //html += "<div class='product-price'><h4>" + myCollection.price + "</h4></div>";
+//     //html += "<div class='product-description'>";
+//     //html += "<p>" + myCollection.description + "</p></div> </div> </div>";
 
-     $("#prueba2").append(html);
- }
+//     //$("#prueba2").append(html);
+// }
 
 function getJsonFromUrl() {
     var query = location.search.substr(1);
@@ -47,4 +48,35 @@ function getJsonFromUrl() {
     });
     //we need only the ID
     return result.id;
+}
+
+function buildMyProduct() {
+    $.ajax({
+        type: 'GET',
+        url: 'http://localhost:63041/api/products',
+        contentType: "application/json; charset=utf-8",
+        dataType: "json",
+        success: function (data) {
+            var html = "";
+            $.each(data, function (element, object) {
+                var html = "<div id='prueba2'><div class='row'><div class='col-md-offset-2 col-md-3'>";
+                html += "<div class='product-view'><h4>" + object.Name + "</h4>";
+                html += "<img src='" + object.imgUrl + "' class='img-rounded' alt='cellphone' style='width:80%'>";
+                html += "<div class='product-image'>";
+                html += "<img src='" + object.imgUrl + "' class='img-rounded' alt='cellphone' style='width:20%'>";
+                html += "<img src='" + object.imgUrl + "' class='img-rounded' alt='cellphone' style='width:20%'>'";
+                html += "<img src='" + object.imgUrl + "' class='img-rounded' alt='cellphone' style='width:20%'></div>";
+                html += "<div class='product-model'><h4>" + object.Model + "</h4></div>";
+                html += "<div class='product-price'><h4>" + object.Price + "</h4></div>";
+                html += "<div class='product-description'>";
+                html += "<p>" + object.Description + "</p></div> </div> </div>";
+
+                $("#prueba2").append(html);
+            });
+            //$("#DynamicHTML").append(html);
+        },
+        error: function (a, b, c) {
+
+        }
+    });
 }
